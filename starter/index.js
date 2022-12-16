@@ -1,7 +1,7 @@
 var finances = [
-    ['Jan-2010', 867884], //A
-    ['Feb-2010', 984655], //B
-    ['Mar-2010', 322013], //C
+    ['Jan-2010', 867884], 
+    ['Feb-2010', 984655], 
+    ['Mar-2010', 322013], 
     ['Apr-2010', -69417],
     ['May-2010', 310503],
     ['Jun-2010', 522857],
@@ -106,28 +106,23 @@ console.log("Total months: " + months.length)
 var secondlist = []
 for (var i = 1; i < income.length; i++)
     secondlist.push(income[i])
-console.log(secondlist)
-// Summ off all items in income - all items in secondlist
-var sum = []
-for (var i=0; i < income.length;i++){
-  sum.push(income[i]-secondlist[i])
+
+// Total off all items in income - all items in secondlist
+// Used length-1 to stop NaN on the last item in the total as there is 1 less item in second array
+
+var total = []
+for (var i=0; i < income.length-1;i++){
+  total.push(income[i]-secondlist[i])
 }
-console.log("Array of profit/losses: " + sum)
-
-// Example of what needs to be done and now to create loop to go through each 
-// var num=income[0]
-// console.log(num)
-
-// var num1=firstlist[0]
-// console.log(num1)
-
-// var sum = num - num1
-// console.log(sum)
-
-// Most likely using, if, else if or else statement
+console.log("Array of profit/losses: " + total)
 
 
-
+// Sum total of all profit and loss 
+var sum = 0
+for (var i=0; i <total.length;i++){
+  sum+=total[i];
+}
+console.log("Sum is :$" + sum)
 
 
 // Total/Number of months -1 (as you only count the number of changes between each month)
