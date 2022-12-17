@@ -107,14 +107,14 @@ var secondlist = []
 for (var i = 1; i < income.length; i++)
     secondlist.push(income[i])
 
-// Total off all items in income - all items in secondlist
+// Total off all items in secondlist- all items in income
 // Used length-1 to stop NaN on the last item in the total as there is 1 less item in second array
 
 var total = []
 for (var i=0; i < income.length-1;i++){
-  total.push(income[i]-secondlist[i])
+  total.push(secondlist[i]-income[i])
 }
-console.log("Array of profit/losses: " + total)
+// console.log("Array of profit/losses: " + total)
 
 
 // Sum total of all profit and loss 
@@ -122,7 +122,11 @@ var sum = 0
 for (var i=0; i <total.length;i++){
   sum+=total[i];
 }
-console.log("Sum is :$" + sum)
+console.log("Net total Profit/Losses :$" + sum)
 
 
 // Total/Number of months -1 (as you only count the number of changes between each month)
+// Created variable to put months length into so that it is a number
+// toFixed(2) rounds the number to 2 decimal points https://bobbyhadz.com/blog/javascript-round-number-to-two-decimal-places
+var monthsLength=months.length;
+console.log("Average Change: $" + ((sum /= months.length -1)).toFixed(2));
