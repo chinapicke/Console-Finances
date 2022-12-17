@@ -127,6 +127,26 @@ console.log("Net total Profit/Losses :$" + sum)
 
 // Total/Number of months -1 (as you only count the number of changes between each month)
 // Created variable to put months length into so that it is a number
+// Checking that sum and monthsLength are numbers
+// console.log(typeof(sum))
+// console.log(typeof(monthsLength))
 // toFixed(2) rounds the number to 2 decimal points https://bobbyhadz.com/blog/javascript-round-number-to-two-decimal-places
 var monthsLength=months.length;
 console.log("Average Change: $" + ((sum /= months.length -1)).toFixed(2));
+
+// FInd out the greatest and lowestprofit (find biggest number in finances variable) using if loop
+// Combine finances string and number 
+var max = total[0];
+var min = total[0];
+for(i=0; i < total.length;i++){
+  if(total[i] >= max){
+    max = total[i]
+  }
+  if(total[i] <= min){
+    min = total[i]
+  }
+}
+
+// Need to add the month 
+console.log("Greatest Increase in Profits: $" + max)
+console.log("Greatest Decrease in Profits: $" + min)
