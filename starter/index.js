@@ -101,6 +101,13 @@ for (var i = 0; i < finances.length; i++) {
 
 console.log("Total months: " + months.length)
 
+//Add up all values from the income of each month 
+var sum1= 0
+for (var i=0; i <income.length;i++){
+  sum1+=income[i];
+}
+console.log("Total of income :" + sum1)
+
 // Calculate profit between each month, comparing each profit 
 // Created a second list starting from item 1 to compare against income list
 var secondlist = []
