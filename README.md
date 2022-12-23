@@ -2,9 +2,9 @@
 
 ## Description
 
-Website where javascript code that anaylses records to help calculate; total numbers of months in the records, net amount of total profit/losses, average change in profit/losses from month to month and then the average, the month with the greatest profit and the month with the greatest loss. To access the information user needs to go into developer tools to see the output. See in below image.
+Website where javascript code that anaylses records to help calculate; total numbers of months in the records, net amount of total profit/losses, average change in profit/losses from month to month and then the average, the month with the greatest profit and the month with the greatest loss. To access the information user needs to go into developer tools to see the output in console. See in below image:
 
-![](
+![Screenshot of console on webpage](screenshot.png
 
 Project was built to increase my understanding of using for loops and 
 
