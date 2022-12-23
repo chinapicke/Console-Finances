@@ -88,45 +88,45 @@ var finances = [
 ];
 
 //Use code to count the total number of months
-var months = []
-var income = []
+let months = []
+let income = []
 // For loop for seperating months from array
-for (var i = 0; i < finances.length; i++) {
+for (let i = 0; i < finances.length; i++) {
   months.push(finances[i][0])
 }
 // For loop for sepearting income from array
-for (var i = 0; i < finances.length; i++) {
+for (let i = 0; i < finances.length; i++) {
   income.push(finances[i][1])
 }
 
 console.log("Total months: " + months.length)
 
 //Add up all values from the income of each month 
-var sum1 = 0
-for (var i = 0; i < income.length; i++) {
+let sum1 = 0
+for (let i = 0; i < income.length; i++) {
   sum1 += income[i];
 }
 console.log("Total of income: $" + sum1)
 
 // Calculate profit between each month, comparing each profit 
 // Created a second list starting from item 1 to compare against income list
-var secondlist = []
-for (var i = 1; i < income.length; i++)
+let secondlist = []
+for (let i = 1; i < income.length; i++)
   secondlist.push(income[i])
 
 // Total off all items in secondlist- all items in income
 // Used length-1 to stop NaN on the last item in the total as there is 1 less item in second array
 
-var total = []
-for (var i = 0; i < income.length - 1; i++) {
+let total = []
+for (let i = 0; i < income.length - 1; i++) {
   total.push(secondlist[i] - income[i])
 }
 // console.log("Array of profit/losses: " + total)
 
 
 // Sum total of all profit and loss 
-var sum = 0
-for (var i = 0; i < total.length; i++) {
+let sum = 0
+for (let i = 0; i < total.length; i++) {
   sum += total[i];
 }
 // console.log("Net total Profit/Losses :$" + sum)
@@ -138,7 +138,7 @@ for (var i = 0; i < total.length; i++) {
 // console.log(typeof(sum))
 // console.log(typeof(monthsLength))
 // toFixed(2) rounds the number to 2 decimal points https://bobbyhadz.com/blog/javascript-round-number-to-two-decimal-places
-var monthsLength = months.length;
+let monthsLength = months.length;
 console.log("Average Change: $" + ((sum /= months.length - 1)).toFixed(2));
 
 // FInd out the greatest and lowestprofit (find biggest number in finances variable) using if loop
@@ -158,7 +158,7 @@ console.log("Average Change: $" + ((sum /= months.length - 1)).toFixed(2));
 // console.log("Greatest Increase in Profits: $" + max)
 // console.log("Greatest Decrease in Profits: $" + min)
 
-var monthsNet = []
+let monthsNet = []
 for (i = 0; i < months.length; i++) {
 
   monthsNet.push([months[i + 1], total[i]])
@@ -166,11 +166,12 @@ for (i = 0; i < months.length; i++) {
 // Console.log this to check that it creates the output that I am able to work with
 // console.log(monthsNet)
 
-var max = monthsNet[0];
-var min = monthsNet[0];
+let max = monthsNet[0];
+let min = monthsNet[0];
 
-for (var i=0; i<monthsNet.length; ++i) {
-  var item = monthsNet[i];
+for (let i=0; i<monthsNet.length; ++i) {
+  // Used const as it cannot be declared or updated like var
+  const item = monthsNet[i];
   if (item[1] > max[1]) max = item;
   if (item[1] < min[1]) min = item;
 }
